@@ -1,0 +1,6 @@
+cluster-init: true
+tls-san:
+  - "192.168.88.40"
+disable:
+  - servicelb
+  - local-storage
