@@ -2,13 +2,13 @@
 
 copy /etc/rancher/k3s/config.yaml
 
-## Longhorn##
+## Longhorn
 **If needed add longhorn repository**
 helm repo add longhorn https://charts.longhorn.io
 create longhorn-system namespace
 install longhorn helm chart
 
-## Metal LB##
+## Metal LB
 **If needed add repository**
 install 
 create metallb-system namespace
