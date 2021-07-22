@@ -1,0 +1,6 @@
+https://rancher.com/docs/rancher/v2.5/en/installation/install-rancher-on-k8s/
+https://rancher.com/docs/rancher/v2.5/en/installation/install-rancher-on-k8s/chart-options/#configuring-ingress-for-external-tls-when-using-nginx-v0-25
+
+<p>create cattle-system namespace</p>
+<p>use external TLS via LB</p?
+helm3 install rancher rancher-stable/rancher --namespace cattle-system --set tls=external --set replicas=3 --set hostname=rancher.clusters.neuralnerd.com
