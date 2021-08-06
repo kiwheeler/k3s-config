@@ -14,6 +14,17 @@ install
 create metallb-system namespace
 **Refer to helm output - confgiure install-specific config file e.g. metallb-1626842500-config**
 
+If using Lens just add config
+Replace []
+With:
+address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.88.150-192.168.88.199
+
+## Install openebs
+
 ## Join agent (worker) nodes
 <p>https://rancher.com/docs/k3s/latest/en/quick-start/</p>
 Get token from /var/lib/rancher/k3s/server/node-token
