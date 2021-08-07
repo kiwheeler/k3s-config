@@ -1,0 +1,25 @@
+Instructions from 
+https://docs.openebs.io/docs/next/ugcstor-csi.html#prerequisites
+
+Use openebs helm chart
+- install useing helm
+
+Check cstor pods are running
+kubectl get pod -n openebs
+
+If cstor not enabled, use following commaand (
+helm upgrade [openebs-installed-name] openebs/openebs  --set cstor.enabled=true --reuse-values --namespace openebs
+
+Find unused block storage devices
+kubectl get bd -n openebs
+
+Create
+- CStorPoolCluster [list of nodes and blockdevices]
+- cStor StorageClass [kubernetes storage class, parameters include cas-typeL cstor, cStorPoolCluster <name of disk pool>] replicaCount
+
+Follow instructions to test with busybox and a test PVC
+
+
+** Set cstor as default kubernetes StorageClass
+https://kubernetes.io/docs/tasks/administer-cluster/change-default-storage-class/
+kubectl patch storageclass cstor-csi-disk -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
